@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Visor 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        p,h1,button{
+            font-family: 'Roboto', sans-serif;
+        }
+        li{
+            cursor: pointer;
+        }
+    </style>
+    <header class="px-10 py-4 flex">
+        <ul>
+            <li>
+                <img src="https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg" class="w-32" alt="">
+            </li>
+        </ul>
+    </header>
+    <main class=" flex flex-col md:flex-row px-10 py-4 gap-8 ">
+        <ul class="flex md:flex-col gap-4 w-full md:w-1/4">
+            <li class="border-black border-2 rounded-lg p-1" id="img1btn">
+                <img src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1194665_pe902051_s5.jpg?f=u" alt="">
+            </li>
+            <li class="border-black border-2 rounded-lg p-1 " id="img2btn">
+                <img src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1194667_pe902050_s5.jpg?f=u" alt="">
+            </li>
+            <li class="border-black border-2 rounded-lg p-1" id="img3btn">
+                <img src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1255203_pe924450_s5.jpg?f=u" alt="">
+            </li>
+            <li>
+                <button id="view3d" class="bg-black text-white rounded-xl h-full md:h-auto md:text-xl text-2xl p-4 flex items-center gap-2 font-semibold border-2 border-black hover:bg-white hover:text-black">
+                    Ver en 360
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+        <div class=" w-full  md:w-3/8">
+            <div class="w-full">
+                <img id="img1" src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1194665_pe902051_s5.jpg?f=xl" alt="">
+                <img id="img2" class="hidden" src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1194667_pe902050_s5.jpg?f=xl" alt="">
+                <img id="img3" class="hidden" src="https://www.ikea.com/mx/es/images/products/fridhult-sofa-cama-knisa-gris-claro__1255203_pe924450_s5.jpg?f=xl" alt="">
+            </div>
+            <div id="viewer" class="w-[50%] rounded-3xl bg-[#ebf8ff] hidden" ></div>
+        </div>
+
+        
+        <div class="w-full  flex flex-col gap-10">
+            <div class="font-inter flex flex-col gap-4 ">
+                <h1 class="font-semibold text-blue-900 text-3xl text-wrap">FRIDHULT Sofá Cama Gris Claro</h1>
+                <hr>
+                <p class="text-wrap text-lg ">El sofá cama FRIDHULT se ha diseñado para que ocupe el menor espacio posible y puedas aprovechar al máximo su superficie para dormir. Es ideal si vives en un espacio reducido y quieres aprovechar tu sofá como cama</p>
+            </div>
+            <div class="flex flex-col gap-6">
+                <p class=" text-3xl font-semibold">$5  999.99 </p>
+                <div class="flex gap-8">
+                    <div class="rounded-xl bg-blue-900 flex items-center justify-items-center w-auto" >
+                        <button id="decrement"  class="text-white pe-1 ps-3 border-0 text-3xl pb-1 font-bold cursor-pointer ">-</button>
+                        <span class="mx-2 text-2xl">
+                        <input type="number" id="quantity" value="1"  class="w-20 rounded-lg text-3xl max-w-xs text-center outline-none bg-white no-spinner " />
+                        </span>
+                        <button id="increment"  class=" text-white ps-1 pe-3 border-0 text-2xl pb-1 font-bold cursor-pointer ">+</button>
+                    </div>
+                    <button class=" font-semibold bg-blue-900 w-full text-yellow-200 rounded-xl hover:bg-blue-800 transform duration-300 cursor-pointer p-4 text-xl">Añadir a carrito</button>  
+                </div>
+                
+                <button class=" font-semibold bg-yellow-300 text-blue-900 rounded-xl font-inter hover:bg-yellow-200 transform duration-300 cursor-pointer p-4 text-xl">Comprar Ahora</button>
+            </div>
+        </div>
+    </main>
+   
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
