@@ -79,8 +79,11 @@ scene.add(directionalLight, directionalLight2);
 
 const loader = new FBXLoader();
 
-
-
+loader.load( 'fridhult2.fbx', function (object) {
+    object.position.set(-77,0,0);
+    object.scale.set(1, 1,1);
+    scene.add(object);
+})
 
 // loader.load( 'fridhult2.fbx', function ( fbx ) {
 //     console.log('loaded');
@@ -92,12 +95,6 @@ const loader = new FBXLoader();
 // 	console.error( error );
 
 // } );
-
-loader.load( 'fridhult2.fbx', function (object) {
-    object.position.set(-77,0,0);
-    object.scale.set(1, 1,1);
-    scene.add(object);
-})
 
 function onResize() {
     var width = window.innerWidth *.50;
